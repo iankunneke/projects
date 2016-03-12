@@ -51,10 +51,12 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="fahrenheitFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="kkJ-IS-uca"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="y3i-PV-WW4"/>
                                 </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Zg7-CY-1VT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1si-uc-jkH"/>
                             <constraint firstItem="RFG-g0-au7" firstAttribute="top" secondItem="Zg7-CY-1VT" secondAttribute="bottom" constant="8" id="34A-0o-Mn1"/>
@@ -89,13 +91,22 @@
                                 <exclude reference="xeQ-8J-6Z7"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Vwv-5o-KvH" appends="YES" id="grd-pd-xDd"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="celsiusLabel" destination="Znt-8g-Lib" id="XFf-Xn-B3u"/>
+                        <outlet property="textField" destination="sEi-VZ-c1j" id="XPv-gL-4Um"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Vwv-5o-KvH">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="7m7-A3-uK0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="279.5" y="314.5"/>
         </scene>
